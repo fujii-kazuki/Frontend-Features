@@ -1,0 +1,216 @@
+@charset 'UTF-8';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.box {
+  background-color: mediumaquamarine;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  flex: 0 1 200px;
+  height: 200px;
+  margin: 20px;
+  transition: all 0.5s ease;
+
+  /* 小要素を中央寄せ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 拡大 */
+.box-1:hover {
+  transform: scale(0.8);
+}
+
+/* 縮小 */
+.box-2:hover {
+  transform: scale(1.2);
+}
+
+/* バウンド */
+.box-3 {
+  transition: all 0.75s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+}
+.box-3:hover {
+  transform: scale(0.5);
+}
+
+/* 右回転 */
+.box-4:hover {
+  transform: rotate(360deg);
+}
+
+/* 左回転 */
+.box-5:hover {
+  transform: rotateY(-360deg);
+}
+
+/* 透過 */
+.box-6:hover {
+  opacity: 0.2;
+}
+
+/* 変色 */
+.box-7:hover {
+  background-color: mediumslateblue;
+}
+
+/* オリジナル1 */
+.box-8 {
+  position: relative;
+  overflow: hidden;
+}
+.box-8 > span {
+  position: relative;
+}
+.box-8::before {
+  content: '';
+  background-color: darkcyan;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(0) rotate(180deg);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.box-8:hover {
+  transform: scale(0.9);
+}
+.box-8:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+}
+
+/* オリジナル2 */
+.box-9 {
+  position: relative;
+  overflow: hidden;
+}
+.box-9 > span {
+  position: relative;
+}
+.box-9::before {
+  content: '';
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.4s;
+  width: 300px;
+  height: 300px;
+  opacity: 0.6;
+}
+.box-9:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.1;
+}
+
+/* オリジナル3 */
+.box-10 {
+  position: relative;
+  overflow: hidden;
+}
+.box-10 > span {
+  position: relative;
+  z-index: 1;
+}
+.box-10::before, .box-10::after {
+  content: '';
+  background-color: darkcyan;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(90deg);
+  transform-origin: left;
+  transition: all 0.5s;
+}
+.box-10::after {
+  left: 50%;
+  transform-origin: right;
+}
+.box-10:hover::before,
+.box-10:hover::after {
+  transform: rotateX(0);
+}
+
+/* オリジナル4 */
+.box-11 {
+  position: relative;
+  overflow: hidden;
+  perspective: 300px;
+}
+.box-11 > span {
+  position: relative;
+  z-index: 1;
+}
+.box-11::before, .box-11::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: left top;
+  transform: rotateX(90deg) rotateY(90deg);
+  transition: all 0.3s;
+  background-color: darkcyan;
+  opacity: 0.5;
+}
+.box-11::after {
+  transition: all 0.4s ease 0.1s;
+  opacity: 1;
+}
+.box-11:hover::before,
+.box-11:hover::after {
+  transform: rotate(0);
+}
+
+/* オリジナル5 */
+.box-12 {
+  position: relative;
+  overflow: hidden;
+  perspective: 300px;
+}
+.box-12 > span {
+  position: relative;
+  z-index: 1;
+}
+.box-12::before, .box-12::after {
+  content: '';
+  background-color: darkcyan;
+  width: 100%;
+  height: 50%;
+  transform: rotateX(-120deg);
+  transform-origin: top;
+  transition: all 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.box-12::after {
+  transform: rotateX(120deg);
+  top: auto;
+  bottom: 0;
+  transform-origin: bottom;
+}
+.box-12:hover::before,
+.box-12:hover::after {
+  transform: rotateX(0);
+}
