@@ -5,3 +5,4 @@
 
 ## 一覧
 - [ホバーアニメーション](https://github.com/fujii-kazuki/Frontend-Features/tree/main/hover-animation)
+- [スクロールトリガー](https://github.com/fujii-kazuki/Frontend-Features/tree/main/scroll-trigger)
