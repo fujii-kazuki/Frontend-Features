@@ -1,0 +1,16 @@
+{
+  "name": "scroll-trigger",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@terwanerik/scrolltrigger": "^1.0.5",
+    "sass": "^1.69.0",
+    "vite": "^4.4.5"
+  }
+}
